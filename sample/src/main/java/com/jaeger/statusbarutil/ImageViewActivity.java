@@ -1,64 +1,52 @@
 package com.jaeger.statusbarutil;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import com.jaeger.library.StatusBarUtil;
 import com.jaeger.statusbardemo.R;
-import java.util.Random;
+import com.r0adkll.slidr.Slidr;
 
 /**
- * Created by Jaeger on 16/2/14.
+ * Created by Jaeger on 16/7/12.
  *
  * Email: chjie.jaeger@gmail.com
  * GitHub: https://github.com/laobie
  */
-public class ColorStatusBarActivity extends BaseActivity {
+public class ImageViewActivity extends BaseActivity {
     private Toolbar mToolbar;
-    private Button mBtnChangeColor;
+    private View mViewNeedOffset;
     private SeekBar mSbChangeAlpha;
     private TextView mTvStatusAlpha;
 
-    private int mColor;
     private int mAlpha;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_color_status_bar);
-
+        setContentView(R.layout.activity_image_view);
+        // 设置右滑动返回
+        Slidr.attach(this);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mBtnChangeColor = (Button) findViewById(R.id.btn_change_color);
+        mViewNeedOffset = findViewById(R.id.view_need_offset);
         mTvStatusAlpha = (TextView) findViewById(R.id.tv_status_alpha);
         mSbChangeAlpha = (SeekBar) findViewById(R.id.sb_change_alpha);
 
-        // 设置toolbar
         setSupportActionBar(mToolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-
-        // 改变颜色
-        mBtnChangeColor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Random random = new Random();
-                mColor = 0xff000000 | random.nextInt(0xffffff);
-                mToolbar.setBackgroundColor(mColor);
-                StatusBarUtil.setColor(ColorStatusBarActivity.this, mColor, mAlpha);
-            }
-        });
 
         mSbChangeAlpha.setMax(255);
         mSbChangeAlpha.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 mAlpha = progress;
-                StatusBarUtil.setColor(ColorStatusBarActivity.this, mColor, mAlpha);
+                StatusBarUtil.setTranslucentForImageView(ImageViewActivity.this, mAlpha, mViewNeedOffset);
                 mTvStatusAlpha.setText(String.valueOf(mAlpha));
             }
 
@@ -77,8 +65,8 @@ public class ColorStatusBarActivity extends BaseActivity {
 
     @Override
     protected void setStatusBar() {
-        mColor = getResources().getColor(R.color.colorPrimary);
-        StatusBarUtil.setColor(this, mColor);
+        mViewNeedOffset = findViewById(R.id.view_need_offset);
+        StatusBarUtil.setTranslucentForImageView(this, mViewNeedOffset);
     }
 
     @Override

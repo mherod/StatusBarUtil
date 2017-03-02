@@ -17,7 +17,7 @@ import com.jaeger.statusbardemo.R;
 /**
  * Created by Jaeger on 16/2/14.
  *
- * Email: chjie.jaeger@gamil.com
+ * Email: chjie.jaeger@gmail.com
  * GitHub: https://github.com/laobie
  */
 public class MainActivity extends BaseActivity {
@@ -27,6 +27,10 @@ public class MainActivity extends BaseActivity {
     private Button mBtnSetColor;
     private Button mBtnSetTransparent;
     private Button mBtnSetTranslucent;
+    private Button mBtnSetForImageView;
+    private Button mBtnUseInFragment;
+    private Button mBtnSetColorForSwipeBack;
+
     private ViewGroup contentLayout;
     private SeekBar mSbChangeAlpha;
     private TextView mTvStatusAlpha;
@@ -46,12 +50,15 @@ public class MainActivity extends BaseActivity {
         mBtnSetColor = (Button) findViewById(R.id.btn_set_color);
         mBtnSetTransparent = (Button) findViewById(R.id.btn_set_transparent);
         mBtnSetTranslucent = (Button) findViewById(R.id.btn_set_translucent);
+        mBtnSetForImageView = (Button) findViewById(R.id.btn_set_for_image_view);
+        mBtnUseInFragment = (Button) findViewById(R.id.btn_use_in_fragment);
+        mBtnSetColorForSwipeBack = (Button) findViewById(R.id.btn_set_color_for_swipe_back);
         mSbChangeAlpha = (SeekBar) findViewById(R.id.sb_change_alpha);
         mTvStatusAlpha = (TextView) findViewById(R.id.tv_status_alpha);
         setSupportActionBar(mToolbar);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-            this, mDrawerLayout, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close);
         mDrawerLayout.setDrawerListener(toggle);
         toggle.syncState();
 
@@ -81,6 +88,30 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+        mBtnSetForImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ImageViewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mBtnUseInFragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, UseInFragmentActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mBtnSetColorForSwipeBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SwipeBackActivity.class);
+                startActivity(intent);
+            }
+        });
+
         mChbTranslucent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,8 +122,8 @@ public class MainActivity extends BaseActivity {
                 } else {
                     contentLayout.setBackgroundDrawable(null);
                     mToolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                    StatusBarUtil.setColorForDrawerLayout(MainActivity.this, mDrawerLayout, getResources().getColor(R
-                        .color.colorPrimary), mAlpha);
+                    StatusBarUtil.setColorForDrawerLayout(MainActivity.this, mDrawerLayout,
+                        getResources().getColor(R.color.colorPrimary), mAlpha);
                 }
             }
         });
