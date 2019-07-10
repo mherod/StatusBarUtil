@@ -8,15 +8,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/nav_header_bg"
-        android:scaleType="centerCrop"/>
+        android:contentDescription="@string/todo"
+        android:scaleType="centerCrop" />
 
     <ImageView
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:layout_gravity="bottom"
         android:layout_marginBottom="56dp"
+        android:contentDescription="@string/todo"
         android:padding="8dp"
-        android:src="@drawable/ic_avatar"/>
+        android:src="@drawable/ic_avatar" />
 
     <TextView
         android:layout_width="match_parent"
@@ -24,15 +26,16 @@
         android:layout_gravity="bottom"
         android:layout_marginBottom="24dp"
         android:padding="16dp"
-        android:text="Jaeger"
-        android:textColor="@android:color/white"/>
+        android:text="@string/jaeger"
+        android:textColor="@android:color/white" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:padding="16dp"
-        android:text="写代码的猴子"
+        android:text="@string/sample_text"
         android:textColor="@android:color/white"
-        android:textSize="12sp"/>
+        android:textSize="12sp" />
 
 </FrameLayout>

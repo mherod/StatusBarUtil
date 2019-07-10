@@ -2,4 +2,8 @@
     <string name="app_name">StatusBarUtil</string>
     <string name="navigation_drawer_open">navigation_drawer_open</string>
     <string name="navigation_drawer_close">navigation_drawer_close</string>
+    <string name="todo">TODO</string>
+    <string name="jaeger">Jaeger</string>
+    <string name="sample_text">写代码的猴子</string>
+    <string name="this_is_a_fragment">This is a fragment.</string>
 </resources>

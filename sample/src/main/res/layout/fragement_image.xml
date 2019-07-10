@@ -7,14 +7,16 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="240dp"
+        android:contentDescription="@string/todo"
         android:scaleType="centerCrop"
-        android:src="@drawable/bg_monkey_king"/>
+        android:src="@drawable/bg_monkey_king" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="56dp"
-        android:text="This is a fragment."
-        android:textSize="22sp"/>
+        android:text="@string/this_is_a_fragment"
+        android:textSize="22sp" />
 
 </LinearLayout>
