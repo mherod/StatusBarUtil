@@ -6,7 +6,6 @@ version = "1.5.1"
 
 android {
     compileSdkVersion 27
-    buildToolsVersion "27.0.3"
 
     resourcePrefix "statusbarutil_"
 
@@ -25,9 +24,9 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:27.1.0'
-    compile 'com.android.support:design:27.1.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.1.0'
+    implementation 'com.android.support:design:27.1.0'
 }
 
 def siteUrl = 'https://github.com/laobie/StatusBarUtil'
