@@ -2,13 +2,16 @@ package com.jaeger.statusbarutil;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
+
 import com.jaeger.library.StatusBarUtil;
 import com.jaeger.statusbardemo.R;
 import com.r0adkll.slidr.Slidr;
+
 import java.util.Random;
 
 /**
@@ -29,8 +32,8 @@ public class SwipeBackActivity extends BaseActivity {
         // 设置右滑动返回
         Slidr.attach(this);
         setContentView(R.layout.swipe_back_activity);
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mBtnChangeColor = (Button) findViewById(R.id.btn_change_color);
+        mToolbar = findViewById(R.id.toolbar);
+        mBtnChangeColor = findViewById(R.id.btn_change_color);
 
         setSupportActionBar(mToolbar);
         if (getSupportActionBar() != null) {

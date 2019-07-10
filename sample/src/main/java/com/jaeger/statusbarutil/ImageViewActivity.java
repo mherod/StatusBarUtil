@@ -1,12 +1,14 @@
 package com.jaeger.statusbarutil;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
+
 import com.jaeger.library.StatusBarUtil;
 import com.jaeger.statusbardemo.R;
 import com.r0adkll.slidr.Slidr;
@@ -31,10 +33,10 @@ public class ImageViewActivity extends BaseActivity {
         setContentView(R.layout.activity_image_view);
         // 设置右滑动返回
         Slidr.attach(this);
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mToolbar = findViewById(R.id.toolbar);
         mViewNeedOffset = findViewById(R.id.view_need_offset);
-        mTvStatusAlpha = (TextView) findViewById(R.id.tv_status_alpha);
-        mSbChangeAlpha = (SeekBar) findViewById(R.id.sb_change_alpha);
+        mTvStatusAlpha = findViewById(R.id.tv_status_alpha);
+        mSbChangeAlpha = findViewById(R.id.sb_change_alpha);
 
         setSupportActionBar(mToolbar);
         if (getSupportActionBar() != null) {

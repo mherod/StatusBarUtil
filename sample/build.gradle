@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 
 android {
 
-    compileSdkVersion 27
+    compileSdkVersion sdk
 
     defaultConfig {
         applicationId "com.jaeger.statusbardemo"
         minSdkVersion 14
-        targetSdkVersion 27
+        targetSdkVersion sdk
         versionCode 8
         versionName "1.5.0"
     }
@@ -21,11 +21,11 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    testImplementation 'junit:junit:4.12'
-    implementation 'com.android.support:appcompat-v7:27.1.0'
-    implementation 'com.android.support:design:27.1.0'
+    testImplementation 'junit:junit:4.13-beta-3'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.ashokvarma.android:bottom-navigation-bar:1.3.0'
-    implementation 'com.r0adkll:slidableactivity:2.0.5'
+    implementation 'com.r0adkll:slidableactivity:2.0.6'
     implementation project(path: ':library')
     //    implementation 'com.jaeger.statusbaruitl:library:1.3.2'
 }

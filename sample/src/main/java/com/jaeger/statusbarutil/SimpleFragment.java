@@ -1,13 +1,15 @@
 package com.jaeger.statusbarutil;
 
 import android.os.Bundle;
-import android.support.annotation.ColorInt;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import com.jaeger.statusbardemo.R;
 
 /**
@@ -28,7 +30,7 @@ public class SimpleFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mTvTitle = (TextView) view.findViewById(R.id.tv_title);
+        mTvTitle = view.findViewById(R.id.tv_title);
         mFakeStatusBar = view.findViewById(R.id.fake_status_bar);
     }
 

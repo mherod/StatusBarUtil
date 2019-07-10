@@ -1,14 +1,17 @@
 package com.jaeger.statusbarutil;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.jaeger.library.StatusBarUtil;
 import com.jaeger.statusbardemo.R;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -27,8 +30,8 @@ public class UseInFragmentActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_use_in_fragment);
-        mVpHome = (ViewPager) findViewById(R.id.vp_home);
-        mBottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
+        mVpHome = findViewById(R.id.vp_home);
+        mBottomNavigationBar = findViewById(R.id.bottom_navigation_bar);
         mBottomNavigationBar.addItem(new BottomNavigationItem(R.drawable.ic_favorite, "One"))
             .addItem(new BottomNavigationItem(R.drawable.ic_gavel, "Two"))
             .addItem(new BottomNavigationItem(R.drawable.ic_grade, "Three"))
