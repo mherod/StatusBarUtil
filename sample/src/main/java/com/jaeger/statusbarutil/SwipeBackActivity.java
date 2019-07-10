@@ -22,7 +22,6 @@ import java.util.Random;
  */
 
 public class SwipeBackActivity extends BaseActivity {
-    private Button mBtnChangeColor;
     private int mColor = Color.GRAY;
     private Toolbar mToolbar;
 
@@ -33,7 +32,7 @@ public class SwipeBackActivity extends BaseActivity {
         Slidr.attach(this);
         setContentView(R.layout.swipe_back_activity);
         mToolbar = findViewById(R.id.toolbar);
-        mBtnChangeColor = findViewById(R.id.btn_change_color);
+        Button mBtnChangeColor = findViewById(R.id.btn_change_color);
 
         setSupportActionBar(mToolbar);
         if (getSupportActionBar() != null) {

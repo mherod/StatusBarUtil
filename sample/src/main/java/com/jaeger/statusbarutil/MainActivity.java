@@ -26,16 +26,8 @@ public class MainActivity extends BaseActivity {
     private DrawerLayout mDrawerLayout;
     private Toolbar mToolbar;
     private CheckBox mChbTranslucent;
-    private Button mBtnSetColor;
-    private Button mBtnSetTransparent;
-    private Button mBtnSetTranslucent;
-    private Button mBtnSetForImageView;
-    private Button mBtnUseInFragment;
-    private Button mBtnSetColorForSwipeBack;
-    private Button mBtnSwitchMode;
 
     private ViewGroup contentLayout;
-    private SeekBar mSbChangeAlpha;
     private TextView mTvStatusAlpha;
 
     private int mStatusBarColor;
@@ -50,14 +42,14 @@ public class MainActivity extends BaseActivity {
         contentLayout = findViewById(R.id.main);
         mToolbar = findViewById(R.id.toolbar);
         mChbTranslucent = findViewById(R.id.chb_translucent);
-        mBtnSetColor = findViewById(R.id.btn_set_color);
-        mBtnSetTransparent = findViewById(R.id.btn_set_transparent);
-        mBtnSetTranslucent = findViewById(R.id.btn_set_translucent);
-        mBtnSetForImageView = findViewById(R.id.btn_set_for_image_view);
-        mBtnUseInFragment = findViewById(R.id.btn_use_in_fragment);
-        mBtnSetColorForSwipeBack = findViewById(R.id.btn_set_color_for_swipe_back);
-        mBtnSwitchMode = findViewById(R.id.btn_switch_mode);
-        mSbChangeAlpha = findViewById(R.id.sb_change_alpha);
+        Button mBtnSetColor = findViewById(R.id.btn_set_color);
+        Button mBtnSetTransparent = findViewById(R.id.btn_set_transparent);
+        Button mBtnSetTranslucent = findViewById(R.id.btn_set_translucent);
+        Button mBtnSetForImageView = findViewById(R.id.btn_set_for_image_view);
+        Button mBtnUseInFragment = findViewById(R.id.btn_use_in_fragment);
+        Button mBtnSetColorForSwipeBack = findViewById(R.id.btn_set_color_for_swipe_back);
+        Button mBtnSwitchMode = findViewById(R.id.btn_switch_mode);
+        SeekBar mSbChangeAlpha = findViewById(R.id.sb_change_alpha);
         mTvStatusAlpha = findViewById(R.id.tv_status_alpha);
         setSupportActionBar(mToolbar);
 

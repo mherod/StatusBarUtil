@@ -20,9 +20,7 @@ import com.r0adkll.slidr.Slidr;
  * GitHub: https://github.com/laobie
  */
 public class ImageViewActivity extends BaseActivity {
-    private Toolbar mToolbar;
     private View mViewNeedOffset;
-    private SeekBar mSbChangeAlpha;
     private TextView mTvStatusAlpha;
 
     private int mAlpha;
@@ -33,10 +31,10 @@ public class ImageViewActivity extends BaseActivity {
         setContentView(R.layout.activity_image_view);
         // 设置右滑动返回
         Slidr.attach(this);
-        mToolbar = findViewById(R.id.toolbar);
+        Toolbar mToolbar = findViewById(R.id.toolbar);
         mViewNeedOffset = findViewById(R.id.view_need_offset);
         mTvStatusAlpha = findViewById(R.id.tv_status_alpha);
-        mSbChangeAlpha = findViewById(R.id.sb_change_alpha);
+        SeekBar mSbChangeAlpha = findViewById(R.id.sb_change_alpha);
 
         setSupportActionBar(mToolbar);
         if (getSupportActionBar() != null) {

@@ -24,7 +24,7 @@ import java.util.Random;
 public class UseInFragmentActivity extends BaseActivity {
     private ViewPager mVpHome;
     private BottomNavigationBar mBottomNavigationBar;
-    private ArrayList<Fragment> mFragmentList = new ArrayList<>();
+    private final ArrayList<Fragment> mFragmentList = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -69,16 +69,13 @@ public class UseInFragmentActivity extends BaseActivity {
             @Override
             public void onPageSelected(int position) {
                 mBottomNavigationBar.selectTab(position);
-                switch (position) {
-                    case 0:
-                        break;
-                    default:
-                        Random random = new Random();
-                        int color = 0xff000000 | random.nextInt(0xffffff);
-                        if (mFragmentList.get(position) instanceof SimpleFragment) {
-                            ((SimpleFragment) mFragmentList.get(position)).setTvTitleBackgroundColor(color);
-                        }
-                        break;
+                if (position == 0) {
+                } else {
+                    Random random = new Random();
+                    int color = 0xff000000 | random.nextInt(0xffffff);
+                    if (mFragmentList.get(position) instanceof SimpleFragment) {
+                        ((SimpleFragment) mFragmentList.get(position)).setTvTitleBackgroundColor(color);
+                    }
                 }
             }
 

@@ -18,8 +18,6 @@ import com.jaeger.statusbardemo.R;
 
 public class SwitchModeActivity extends BaseActivity {
     private Toolbar mToolbar;
-    private Button mBtnSetLightMode;
-    private Button mBtnSetDarkMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +25,8 @@ public class SwitchModeActivity extends BaseActivity {
         setContentView(R.layout.activity_switch_mode);
 
         mToolbar = findViewById(R.id.toolbar);
-        mBtnSetLightMode = findViewById(R.id.btn_set_light_mode);
-        mBtnSetDarkMode = findViewById(R.id.btn_set_dark_mode);
+        Button mBtnSetLightMode = findViewById(R.id.btn_set_light_mode);
+        Button mBtnSetDarkMode = findViewById(R.id.btn_set_dark_mode);
 
         // 设置toolbar
         setSupportActionBar(mToolbar);

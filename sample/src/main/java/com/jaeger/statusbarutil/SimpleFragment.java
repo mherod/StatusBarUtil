@@ -12,6 +12,8 @@ import androidx.fragment.app.Fragment;
 
 import com.jaeger.statusbardemo.R;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Created by Jaeger on 16/8/11.
  *
@@ -23,12 +25,12 @@ public class SimpleFragment extends Fragment {
     private View mFakeStatusBar;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NotNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragement_simple, container, false);
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NotNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mTvTitle = view.findViewById(R.id.tv_title);
         mFakeStatusBar = view.findViewById(R.id.fake_status_bar);

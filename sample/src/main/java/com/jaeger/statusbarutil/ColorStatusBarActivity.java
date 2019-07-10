@@ -21,8 +21,6 @@ import java.util.Random;
  */
 public class ColorStatusBarActivity extends BaseActivity {
     private Toolbar mToolbar;
-    private Button mBtnChangeColor;
-    private SeekBar mSbChangeAlpha;
     private TextView mTvStatusAlpha;
 
     private int mColor;
@@ -34,9 +32,9 @@ public class ColorStatusBarActivity extends BaseActivity {
         setContentView(R.layout.activity_color_status_bar);
 
         mToolbar = findViewById(R.id.toolbar);
-        mBtnChangeColor = findViewById(R.id.btn_change_color);
+        Button mBtnChangeColor = findViewById(R.id.btn_change_color);
         mTvStatusAlpha = findViewById(R.id.tv_status_alpha);
-        mSbChangeAlpha = findViewById(R.id.sb_change_alpha);
+        SeekBar mSbChangeAlpha = findViewById(R.id.sb_change_alpha);
 
         // 设置toolbar
         setSupportActionBar(mToolbar);

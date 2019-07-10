@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
 import com.jaeger.library.StatusBarUtil;
 import com.jaeger.statusbardemo.R;
 
@@ -19,7 +20,6 @@ public class ImageStatusBarActivity extends BaseActivity {
     public static final String EXTRA_IS_TRANSPARENT = "is_transparent";
     private TextView mTvStatusAlpha;
     private RelativeLayout mRootLayout;
-    private Button mBtnChangeBackground;
     private boolean isBgChanged;
     private SeekBar mSbChangeAlpha;
 
@@ -32,10 +32,10 @@ public class ImageStatusBarActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_status_bar);
 
-        mRootLayout = (RelativeLayout) findViewById(R.id.root_layout);
-        mBtnChangeBackground = (Button) findViewById(R.id.btn_change_background);
-        mTvStatusAlpha = (TextView) findViewById(R.id.tv_status_alpha);
-        mSbChangeAlpha = (SeekBar) findViewById(R.id.sb_change_alpha);
+        mRootLayout = findViewById(R.id.root_layout);
+        Button mBtnChangeBackground = findViewById(R.id.btn_change_background);
+        mTvStatusAlpha = findViewById(R.id.tv_status_alpha);
+        mSbChangeAlpha = findViewById(R.id.sb_change_alpha);
 
         mBtnChangeBackground.setOnClickListener(new View.OnClickListener() {
             @Override
